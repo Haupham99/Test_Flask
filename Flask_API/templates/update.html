@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+   <body>
+      <h3>Students - Flask SQLAlchemy example</h3>
+      <hr/>
+      <form action = "{{ request.path }}/{{ student1.id }}" method = "post">
+         <label for = "name">Name</label><br>
+         <input type = "text" name = "name" placeholder = "Name" value="{{ student1.name }}" /><br>
+         <label for = "email">City</label><br>
+         <input type = "text" name = "city" placeholder = "city" value="{{ student1.city }}"/><br>
+         <label for = "addr">Addr</label><br>
+         <textarea name = "addr" placeholder = "addr" value="{{ student1.addr }}"></textarea><br>
+         <label for = "PIN">PIN</label><br>
+         <input type = "text" name = "pin" placeholder = "pin" value="{{ student1.pin }}"/><br>
+         <input type = "submit" value = "Submit" />
+      </form>
+   </body>
+</html>
