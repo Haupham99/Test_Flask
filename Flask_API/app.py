@@ -47,7 +47,7 @@ def create():
 @app.route('/update/<id>', methods = ['GET', 'POST'])
 def update(id):
     if request.method == 'POST':
-        stu = students.query.filter_by(id=id)
+        stu = students.query.get(id)
         stu.name = request.form['name']
         stu.city = request.form['city']
         stu.addr = request.form['addr']
@@ -56,7 +56,15 @@ def update(id):
         db.session.commit()
         flash('Update successfully')
         return redirect(url_for('show_all'))
-    return render_template('update.html', student1 = students.query.filter_by(id = id))
+    return render_template('update.html', data = students.query.get(id))
+
+@app.route('/delete/<id>')
+def delete(id):
+   stu = students.query.get(id)
+   db.session.delete(stu)
+   db.session.commit()
+
+   return redirect(url_for('show_all'))
 
 if __name__ == '__main__':
    db.create_all()

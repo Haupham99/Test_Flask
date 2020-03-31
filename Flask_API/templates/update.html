@@ -3,15 +3,15 @@
    <body>
       <h3>Students - Flask SQLAlchemy example</h3>
       <hr/>
-      <form action = "{{ request.path }}/{{ student1.id }}" method = "post">
+      <form action = "{{ request.path }}" method = "post">
          <label for = "name">Name</label><br>
-         <input type = "text" name = "name" placeholder = "Name" value="{{ student1.name }}" /><br>
+         <input type = "text" name = "name" placeholder = "{{data.name}}" value="" /><br>
          <label for = "email">City</label><br>
-         <input type = "text" name = "city" placeholder = "city" value="{{ student1.city }}"/><br>
+         <input type = "text" name = "city" placeholder = "{{data.city}}" value=""/><br>
          <label for = "addr">Addr</label><br>
-         <textarea name = "addr" placeholder = "addr" value="{{ student1.addr }}"></textarea><br>
+         <textarea name = "addr" placeholder = "{{data.addr}}" value=""></textarea><br>
          <label for = "PIN">PIN</label><br>
-         <input type = "text" name = "pin" placeholder = "pin" value="{{ student1.pin }}"/><br>
+         <input type = "text" name = "pin" placeholder = "{{data.pin}}" value=""/><br>
          <input type = "submit" value = "Submit" />
       </form>
    </body>

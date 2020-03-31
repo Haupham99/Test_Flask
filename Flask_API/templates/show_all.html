@@ -6,7 +6,6 @@
          <a href = "{{ url_for('show_all') }}">Comments - Flask 
             SQLAlchemy example</a>
       </h3>
-      
       <hr/>
       {%- for message in get_flashed_messages() %}
          {{ message }}
@@ -35,6 +34,7 @@
                   <td>{{ student.addr }}</td>
                   <td>{{ student.pin }}</td>
                   <td><a href="{{ url_for('update', id = student.id) }}">Sửa</a></td>
+                  <td><a href="{{ url_for('delete', id = student.id) }}">Xóa</a></td>
                 </tr>
             {% endfor %}
          </tbody>
